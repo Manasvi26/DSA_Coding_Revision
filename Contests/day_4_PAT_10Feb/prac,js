@@ -1,0 +1,64 @@
+function runProgram(input) {
+  var input = input.split("\n");
+  //   console.log(input);
+
+  var n = +input[0];
+
+  var arr = input[1].split(" ").map(Number);
+
+  var sumGiven = +input[2];
+
+  //   console.log(arr);
+  //   console.log(sum);
+  var temp = [];
+
+  var flag = false;
+  function subsets(arr, temp, k) {
+    for (var i = k; i < arr.length; i++) {
+      temp.push(arr[i]);
+      //   console.log(temp);
+      var subsetSum = 0;
+      for (var j = 0; j < temp.length; j++) {
+        subsetSum = subsetSum + temp[j];
+      }
+      //   console.log("subsetSum", subsetSum);
+      if (subsetSum === sumGiven) {
+        // console.log(subsetSum);
+        flag = true;
+      }
+
+      subsets(arr, temp, i + 1);
+      temp.pop();
+    }
+  }
+  subsets(arr, temp, 0);
+
+  if (flag) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+}
+
+if (process.env.USERNAME === "manas") {
+  runProgram(`9
+1 2 3 4 5 6 7 8 9
+12`);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}

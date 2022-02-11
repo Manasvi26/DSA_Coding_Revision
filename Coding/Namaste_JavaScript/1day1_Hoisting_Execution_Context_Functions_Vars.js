@@ -4,6 +4,7 @@
 
 var x = 1;
 a();
+// console.log(a()); //will give 10 at first and then gives undefined!
 b();
 console.log(x);
 
