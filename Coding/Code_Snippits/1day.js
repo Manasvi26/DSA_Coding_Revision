@@ -135,3 +135,15 @@
 // Q. 14 Very important to understand the basics of Js (objects, prototype and methods. How do we actually use built in methods ? )
 
 ///////////////////////////////////////
+
+function getInfo(member, year) {
+  member.name = "Lydia";
+  year = "1998";
+}
+
+const person = { name: "Sarah" };
+const birthYear = "1997";
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear);
