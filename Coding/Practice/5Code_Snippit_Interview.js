@@ -63,22 +63,35 @@
 
 // a();
 // console.log(a());
-
+/////////////////////////////////////////////////////////////
 //Example for understanding "this" more.
 
-var obj = {
-  a: 10,
-  me: this,
-  b: function x() {
-    console.log(this);
-    // console.log("line 73", this.me); //{}
-    // console.log("line 78", me); //ReferenceError: me is not defined, Can't get access to "keys" like this.
-    function c() {
-      //   console.log(this);
-      console.log(this); //Can't access "this". Here, "this" refers to global (window) object.
-    }
-    c();
-  },
-};
+// var obj = {
+//   a: 10,
+//   me: this,
+//   b: function x() {
+//     console.log(this);
+//     // console.log("line 73", this.me); //{}
+//     // console.log("line 78", me); //ReferenceError: me is not defined, Can't get access to "keys" like this.
+//     function c() {
+//       //   console.log(this);
+//       console.log(this); //Can't access "this". Here, "this" refers to global (window) object.
+//     }
+//     c();
+//   },
+// };
 
-obj.b();
+// obj.b();
+///////////////////////////////////////////////////////////
+
+//Understanding Counstructor function
+//Is a blueprint of an object. Better way of creating objects with same properties.
+
+function Player(n, t) {
+  this.name = n;
+  this.team = t;
+}
+
+let myPlayer = new Player("Messi", "Bercelona");
+
+console.log(myPlayer);
