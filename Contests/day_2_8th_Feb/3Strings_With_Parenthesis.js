@@ -14,7 +14,6 @@ function runProgram(input) {
         (arr[j] === "}" && stack[stack.length - 1] !== "{") ||
         (arr[j] === "]" && stack[stack.length - 1] !== "[")
       ) {
-        stack.push(arr[j]);
         break;
       } else {
         //   console.log("x");
@@ -28,7 +27,7 @@ function runProgram(input) {
   if (!stack.length) {
     console.log("balanced");
   } else {
-    console.log("not balanced");
+    console.log("unbalanced");
   }
 }
 
@@ -38,7 +37,7 @@ function runProgram(input) {
 // {{[[(())]]}}
 
 if (process.env.USERNAME === "manas") {
-  runProgram(`[one[two[three[four[five[six[seven[eight[nine[ten]]]]]]]]]]`);
+  runProgram(`{[(])}`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
