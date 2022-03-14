@@ -1,11 +1,9 @@
-//Notes: https://www.guru99.com/quicksort-in-javascript.html
-
 // What is Quick Sort?
 // Quick Sort algorithm follows Divide and Conquer approach. It divides elements into smaller parts based on some condition and performing the sort operations on those divided smaller parts.
 
-//T.C => O(nlogn); (worst case);
+// If you need to sort large number of elements. So, the solution is to use Quick sort for large dataset.
 
-var arr = [3, 9, 2, 6, 4, 4, 4, 5, 8];
+var arr = [8, 4, 6, 1, 3, 75, 3, 4, 57, 8];
 
 function swap(arr, i, j) {
   var temp = arr[i];
@@ -13,28 +11,26 @@ function swap(arr, i, j) {
   arr[j] = temp;
   return arr;
 }
-// var swapped = swap(arr, 1, 5);
-// console.log(swapped);
 
 function partition(arr, i, j) {
-  var pivot = arr[Math.floor(i + (j - i) / 2)]; //here we need the value, not the index, be carefull!
-  //   console.log(pivot);
+  var pivot = arr[Math.floor(i + (j - i) / 2)]; //BEAWARE: THIS IS VALUE NOT AN INDEX;
 
   while (i <= j) {
     while (arr[i] < pivot) {
       i++;
     }
+
     while (pivot < arr[j]) {
       j--;
     }
 
     if (i <= j) {
       swap(arr, i, j);
-
       i++;
       j--;
     }
   }
+
   return i;
 }
 

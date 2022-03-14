@@ -1,5 +1,4 @@
 var str = "abc";
-
 var temp = [];
 function subString(str, k) {
   for (let i = k; i < str.length; i++) {
