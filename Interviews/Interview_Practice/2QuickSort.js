@@ -13,14 +13,14 @@ function swap(arr, i, j) {
 }
 
 function partition(arr, i, j) {
-  var pivot = arr[Math.floor(i + (j - i) / 2)]; //BEAWARE: THIS IS VALUE NOT AN INDEX;
+  var pivotValue = arr[Math.floor(i + (j - i) / 2)]; //BEAWARE: THIS IS VALUE NOT AN INDEX; array[mid] ki value hai yeh!
 
   while (i <= j) {
-    while (arr[i] < pivot) {
+    while (arr[i] < pivotValue) {
       i++;
     }
 
-    while (pivot < arr[j]) {
+    while (pivotValue < arr[j]) {
       j--;
     }
 
