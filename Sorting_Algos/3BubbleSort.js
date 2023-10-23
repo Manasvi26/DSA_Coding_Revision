@@ -11,7 +11,6 @@ function bubbleSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     // var check = false;
     var max_index = i;
-    console.log("arr", arr);
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[max_index] > arr[j]) {
         swap(arr, max_index, j);

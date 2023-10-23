@@ -1,4 +1,5 @@
-var arr = [3, 9, 7, 2, 1, 5, 8];
+// var arr = [3, 9, 7, 2, 1, 5, 8];
+var arr = [64, 34, 25, 12, 22, 11, 90];
 
 function swap(arr, i, j) {
   var temp = arr[i];
@@ -6,18 +7,22 @@ function swap(arr, i, j) {
   arr[j] = temp;
 }
 
-function insertionSort(arr) {
+function slectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     console.log(arr);
-    var minimum_index = i;
+    let minimum_index = i;
     for (let j = i + 1; j < arr.length; j++) {
       console.log("min_el", arr[minimum_index]);
       if (arr[minimum_index] > arr[j]) {
-        swap(arr, minimum_index, j);
+        minimum_index = j;
       }
+    }
+    if (minimum_index !== i) {
+      //this above condition is important optimisation
+      swap(arr, i, minimum_index);
     }
   }
   return arr;
 }
 
-console.log(insertionSort(arr));
+console.log(slectionSort(arr));
