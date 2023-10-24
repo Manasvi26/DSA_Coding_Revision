@@ -42,7 +42,7 @@ function partition(arr, i, j) {
 
 function quickSort(arr, left, right) {
   if (arr.length > 1) {
-    var index = partition(arr, left, right);
+    var index = partition(arr, left, right); //here left and right are pointers
 
     if (left < index - 1) {
       quickSort(arr, left, index - 1);

@@ -1,10 +1,10 @@
 // var arr = [3, 9, 7, 2, 1, 5, 8];
 var arr = [64, 34, 25, 12, 22, 11, 90];
 
-function swap(arr, i, j) {
+function swap(arr, i, minIndex) {
   var temp = arr[i];
-  arr[i] = arr[j];
-  arr[j] = temp;
+  arr[i] = arr[minIndex];
+  arr[minIndex] = temp;
 }
 
 function slectionSort(arr) {
@@ -14,7 +14,7 @@ function slectionSort(arr) {
     for (let j = i + 1; j < arr.length; j++) {
       console.log("min_el", arr[minimum_index]);
       if (arr[minimum_index] > arr[j]) {
-        minimum_index = j;
+        minimum_index = j; //this step
       }
     }
     if (minimum_index !== i) {
