@@ -13,7 +13,7 @@ function debouncing(fn, delay) {
     let args = arguments;
     clearTimeout(timer);
     timer = setTimeout(() => {
-      getData.apply(context, args);
+      getData.apply(context, args); //here this needs to be "fn"
     }, delay);
   };
 }

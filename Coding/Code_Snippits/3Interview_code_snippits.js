@@ -9,7 +9,7 @@
 // console.log(obj);
 // console.log(obj2);
 
-//flattening a object
+// flattening a object
 // var obj = {
 //   a: {
 //     b: {
@@ -20,12 +20,12 @@
 //   e: true,
 // };
 
-// ["test", 2, true]
+// ["test", 2, true];
 
 // console.log(obj.value);
 
-// Promise.resolve("first");
-// console.log("second");
-// setTimeout(() => {
-//   console.log("third");
-// });
+Promise.resolve("first");
+console.log("second");
+setTimeout(() => {
+  console.log("third");
+});
