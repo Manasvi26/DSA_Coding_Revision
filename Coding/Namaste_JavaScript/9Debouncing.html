@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <input id="search-input" onkeyup="runner()" />
+    <h4 id="input-value"></h4>
+  </head>
+  <body>
+    <script>
+      //   let searchValue = document.getElementById("search-input").value;
+      //   document.getElementById("input-value").innerHTML = searchValue;
+
+      const runner = debouncing(getData, 500);
+
+      function debouncing(cb, d) {
+        let timer;
+        return function test(...args) {
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(() => {
+            cb();
+          }, d);
+        };
+      }
+
+      let count = 0;
+      function getData() {
+        console.log(`I am called ${count++}`);
+      }
+    </script>
+  </body>
+</html>

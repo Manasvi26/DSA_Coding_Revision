@@ -30,3 +30,5 @@ console.log(a.myMethod());
 // var newObj = Object.create(obj);
 
 // console.log(newObj); // {} //empty object is loged, but inside the prototype of this we can see all the properties of the parent object.
+
+///////////////////////////////////////////////////////////
