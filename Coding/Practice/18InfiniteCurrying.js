@@ -14,6 +14,29 @@
 // const result = calc.add(10).multiply(5).substract(30).add(20);
 
 //Ans.
+// const calc = {
+//   total: 0,
+//   add: function (a) {
+//     this.total = this.total + a;
+//     return this;
+//   },
+
+//   multiply: function (b) {
+//     this.total = this.total * b;
+//     return this;
+//   },
+
+//   substract: function (c) {
+//     this.total = this.total - c;
+//     return this;
+//   },
+// };
+
+// const result = calc.add(10).multiply(5).substract(30).add(20);
+// console.log(result.total); //40
+
+//Implement
+
 const calc = {
   total: 0,
   add: function (a) {
@@ -21,16 +44,17 @@ const calc = {
     return this;
   },
 
-  multiply: function (b) {
-    this.total = this.total * b;
+  substract: function (b) {
+    this.total = this.total - b;
     return this;
   },
 
-  substract: function (c) {
-    this.total = this.total - c;
+  multiply: function (c) {
+    this.total = this.total * c;
     return this;
   },
 };
 
 const result = calc.add(10).multiply(5).substract(30).add(20);
-console.log(result.total); //40
+
+console.log(result.total);

@@ -47,7 +47,7 @@ function flattenAnObject(object, parent) {
       if (typeof value === "object") {
         flatteningObj(value, newParent + ".");
       } else {
-        finalObj[newParent] = value;
+        finalObj[newParent] = value; //this line, making "newParent" as key
       }
     }
   };
@@ -55,4 +55,20 @@ function flattenAnObject(object, parent) {
   return finalObj;
 }
 
-console.log(flattenAnObject(target, ""));
+console.log(flattenAnObject(obj, ""));
+
+const arr = [4, 2, 5, [45, 32, 9, [98, 342, 893], 90, 43], 4, 75, [54, 256]];
+
+function flateningArray(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!Array.isArray(array[i])) {
+      result.push(array[i]);
+    } else {
+      result.push(...flateningArray(array[i]));
+    }
+  }
+  return result;
+}
+
+console.log(flateningArray(arr));
