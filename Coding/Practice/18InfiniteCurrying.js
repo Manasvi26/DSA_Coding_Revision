@@ -1,12 +1,12 @@
 //Implement add(2)(3)(4)(5)()
 
 //Ans.
-// function add(a) {
-//   return function (b) {
-//     if (b) return add(a + b);
-//     return a;
-//   };
-// }
+function add(a) {
+  return function (b) {
+    if (b) return add(a + b);
+    return a;
+  };
+}
 
 // console.log(add(2)(3)(4)(5)());
 
@@ -57,4 +57,13 @@ const calc = {
 
 const result = calc.add(10).multiply(5).substract(30).add(20);
 
-console.log(result.total);
+// console.log(result.total);
+
+function addNew(a) {
+  return function (b) {
+    if (b) return add(a + b);
+    return a;
+  };
+}
+
+console.log(addNew(2)(3)(4)(5)(10)());

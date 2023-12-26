@@ -16,7 +16,7 @@
 // }
 
 a = { name: "manasvi" };
-b = { name: "Manasvi" };
+b = { name: "manasvi" };
 
 console.log(a == b);
 console.log(a === b);

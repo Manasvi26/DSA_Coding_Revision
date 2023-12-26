@@ -6,28 +6,28 @@ var arr = [3, 9, 2, 6, 4, 5, 8];
 // It has a time complexity of O(n log n) and is a stable sorting algorithm.
 
 function mergeSort(arr) {
-  if (arr.length <= 1) return arr; //base case
+  if (arr.length <= 1) return arr; //base case ***IMPORTANT***
 
-  let mid = Math.floor(arr.length / 2);
+  let mid = Math.floor(arr.length / 2); //mid-point-index
 
-  var left = mergeSort(arr.slice(0, mid));
-  var right = mergeSort(arr.slice(mid));
-  return merge(left, right);
+  var leftArr = mergeSort(arr.slice(0, mid)); //"mergeSort" the left part array (left smaller array by dividing)
+  var rightArr = mergeSort(arr.slice(mid)); //"mergeSort" the right part array (right smaller array by dividing)
+  return merge(leftArr, rightArr); //return "merge function" to merge (join) the sorted parts (i.e. merge two sorted arrays)
 }
 
-function merge(left, right) {
+function merge(leftArray, rightArray) {
   let mergedArr = [];
-  while (left.length && right.length) {
-    left[0] < right[0]
-      ? mergedArr.push(left.shift())
-      : mergedArr.push(right.shift());
+  while (leftArray.length && rightArray.length) {
+    leftArray[0] < rightArray[0]
+      ? mergedArr.push(leftArray.shift())
+      : mergedArr.push(rightArray.shift());
   }
-  while (left.length) {
-    mergedArr.push(left.shift());
+  while (leftArray.length) {
+    mergedArr.push(leftArray.shift());
   }
 
-  while (right.length) {
-    mergedArr.push(right.shift());
+  while (rightArray.length) {
+    mergedArr.push(rightArray.shift());
   }
 
   return mergedArr;
@@ -77,6 +77,7 @@ console.log(mergeSort(arr));
 
 //////////////////////////////////////////////////////
 // IMPORTANMT POINTS TO KEEP IN MIND
+//write the base case at first
 //.shift() changes the original array, while .push()
 // only takes the elementmentioned inside it and
 // original array remains intact
