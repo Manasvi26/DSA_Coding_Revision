@@ -13,10 +13,32 @@ var str = "abc";
 var arr = str.split("");
 // console.log(arr);
 
-var temp = [];
+// var temp = [];
+// function permutations(arr, temp) {
+//   if (temp.length === arr.length) {
+//     console.log(temp.join(" "));
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (temp.includes(arr[i])) {
+//       continue;
+//     }
+
+//     temp.push(arr[i]);
+
+//     permutations(arr, temp);
+
+//     temp.pop();
+//   }
+// }
+
+// permutations(arr, temp);
+
+//Practice
+
 function permutations(arr, temp) {
   if (temp.length === arr.length) {
-    console.log(temp.join(" "));
+    console.log(temp);
   }
 
   for (let i = 0; i < arr.length; i++) {
@@ -25,11 +47,8 @@ function permutations(arr, temp) {
     }
 
     temp.push(arr[i]);
-
     permutations(arr, temp);
-
     temp.pop();
   }
 }
-
-permutations(arr, temp);
+permutations(arr, []);
