@@ -111,16 +111,23 @@ var arr = [{}, [], undefined, null, false, true, 1, "String"];
 // How to avoid changing value of obj1 in above example
 
 //Question: 0,1,2 sort.
-var arr = [1, 2, 1, 0, 2, 1, 0, 2, 1, 0, 2];
+// var arr = [1, 2, 1, 0, 2, 1, 0, 2, 1, 0, 2];
 
+// function dutchNationalFlag(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
+//   let pointer = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     let element = arr[i];
+//     if (element)
+//       return;
+//   }
+// }
 
-function dutchNationalFlag(arr) {
-  let left = 0;
-  let right = arr.length - 1;
-  let pointer = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let element = arr[i];
-    if(element )
-    
-  }
-}
+//////////////////////////////////////////////////////////////////////////////////////////
+var arr = [{ a: 1 }, { b: 2 }];
+let arrCopy = [...arr];
+
+arrCopy[0].a = 10;
+arrCopy[1] = 1000;
+console.log(arr);

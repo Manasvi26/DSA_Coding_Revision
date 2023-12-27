@@ -1,5 +1,5 @@
 let array = [22, 31, 31, 64, 87, 93, 101, 101, 103, 156, 167];
-console.log(array.length);
+console.log("length --->", array.length);
 
 //****** Array should be in sorted order to apply this ******//
 

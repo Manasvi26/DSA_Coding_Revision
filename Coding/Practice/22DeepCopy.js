@@ -49,14 +49,14 @@ const obj = {
 
 // console.log("deep copy --->", createDeepCopy(arr));
 
-//IMPORTANT TRICKY QUESTION
+// IMPORTANT TRICKY QUESTION
 
-// let a = [1, 2, [3, 4, [9, 10], 20], 100];
+let a = [1, 2, [3, 4, [9, 10], 20], 100];
 
-//CASE.1
+// CASE.1
 // let b = a;
 
-//CASE.2
+// CASE.2
 // let b = [...a];
 
 // b[0] = "abc";
@@ -65,3 +65,16 @@ const obj = {
 
 // console.log("a --->", a);
 // console.log("b --->", b);
+
+/////////////////////////////////////////////////////
+
+//IMPORTANT TRICKY QUESTION
+
+// var arr = [{ a: 1 }, { b: 2 }];
+// let arrCopy = [...arr];
+
+// arrCopy[0].a = 10;
+// arrCopy[1] = 1000;
+// console.log(arr);
+
+/////////////////////////////////////////////////
