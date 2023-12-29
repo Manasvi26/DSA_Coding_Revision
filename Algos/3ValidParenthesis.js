@@ -8,15 +8,15 @@
 
 // Example 1:
 
-let s = "()";
+// let s = "()";
 // Output: true
 // Example 2:
 
-// Input: s = "()[]{}"
+// let s = "()[]{}";
 // Output: true
 // Example 3:
 
-// Input: s = "(]"
+let s = "(]";
 // Output: false
 
 // Constraints:
@@ -26,6 +26,20 @@ let s = "()";
 
 function checkValidity(string) {
   let strArr = string.split("");
-  console.log(strArr);
+  if (strArr.length % 2 !== 0) {
+    return false;
+  }
+  for (let i = 0; i < strArr.length; i += 2) {
+    if (
+      (strArr[i] === "(" && strArr[i + 1] === ")") ||
+      (strArr[i] === "[" && strArr[i + 1] === "]") ||
+      (strArr[i] === "{" && strArr[i + 1] === "}")
+    ) {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
 }
 console.log(checkValidity(s));
