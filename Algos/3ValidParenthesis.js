@@ -16,7 +16,7 @@
 // Output: true
 // Example 3:
 
-let s = "(]";
+let s = "{{";
 // Output: false
 
 // Constraints:
@@ -26,20 +26,25 @@ let s = "(]";
 
 function checkValidity(string) {
   let strArr = string.split("");
+  let stack = [];
   if (strArr.length % 2 !== 0) {
     return false;
   }
-  for (let i = 0; i < strArr.length; i += 2) {
-    if (
-      (strArr[i] === "(" && strArr[i + 1] === ")") ||
-      (strArr[i] === "[" && strArr[i + 1] === "]") ||
-      (strArr[i] === "{" && strArr[i + 1] === "}")
+  for (let i = 0; i < strArr.length; i++) {
+    if (strArr[i] === "(" || strArr[i] === "[" || strArr[i] === "{") {
+      stack.push(strArr[i]);
+    } else if (
+      (strArr[i] === ")" && stack[stack.length - 1] === "(") ||
+      (strArr[i] === "]" && stack[stack.length - 1] === "[") ||
+      (strArr[i] === "}" && stack[stack.length - 1] === "{")
     ) {
-      continue;
+      stack.pop();
     } else {
       return false;
     }
   }
-  return true;
+  if (stack.length) {
+    return false;
+  } else return true;
 }
 console.log(checkValidity(s));
