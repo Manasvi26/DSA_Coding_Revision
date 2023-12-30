@@ -1,9 +1,9 @@
-var num = 20;
+// var num = 20;
 
-var display = function () {
-  console.log("--->", num);
-  var num = 10;
-};
+// var display = function () {
+//   console.log("--->", num);
+//   var num = 10;
+// };
 
 // display();
 
@@ -73,7 +73,7 @@ var display = function () {
 
 //Question: Remove falsy value from an array.
 
-var arr = [{}, [], undefined, null, false, true, 1, "String"];
+// var arr = [{}, [], undefined, null, false, true, 1, "String"];
 
 // function removeFalsyValues(array) {
 //   let result = [];
@@ -124,10 +124,116 @@ var arr = [{}, [], undefined, null, false, true, 1, "String"];
 //   }
 // }
 
-//////////////////////////////////////////////////////////////////////////////////////////
-var arr = [{ a: 1 }, { b: 2 }];
-let arrCopy = [...arr];
+////////*************////VERY IMPORTANT////*******************/////////
 
-arrCopy[0].a = 10;
-arrCopy[1] = 1000;
-console.log(arr);
+// var arr = [{ a: 1 }, { b: 2 }];
+// let arrCopy = [...arr];
+
+// arrCopy[0].a = 10;
+// arrCopy[1] = 1000;
+// console.log(arr);
+
+//////////////////////////////////////////////////////////////////////
+
+// function getAge(...args) {
+//   console.log(typeof args);
+// }
+
+// getAge(21);
+
+///////////////////////////////////////////////////
+
+// const numbers = [1, 2, 3];
+// numbers[10] = 11;
+// console.log(numbers);
+
+///////////////////////////////////////////////////////////
+
+// (() => {
+//   let x, y;
+//   try {
+//     throw new Error();
+//   } catch (x) {
+//     (x = 1), (y = 2);
+//     console.log(x);
+//   }
+//   console.log(x);
+//   console.log(y);
+// })();
+
+/////////////////////////////////////////////////////////
+
+// let person = { name: "Lydia" };
+// const members = [person];
+// person = null;
+
+// console.log(members);
+
+//////////////////////////////////////////////////////////
+
+//1.
+// let a = [1, 2, 3, 4];
+// let b = a;
+// b = null;
+// console.log("b --->", b);
+// console.log("a --->", a);
+////////////////////////////////
+//2.
+let a = [1, 2, 3, 4];
+let b = a;
+a = null;
+
+console.log("a --->", a);
+console.log("b --->", b);
+/////////////////////////////////
+//3.
+// let a = [1, 2, [3, 4]];
+// let b = a;
+// b[0] = null;
+
+// console.log("a --->", a);
+// console.log("b --->", b);
+///////////////////////////////////
+//4.
+// let a = [1, 2, [3, 4]];
+// let b = a;
+// a[0] = null;
+
+// console.log("a --->", a);
+// console.log("b --->", b);
+///////////////////////////////////////
+//5.
+// let a = [1, 2, [3, 4]];
+// let b = [...a];
+// a[0] = null;
+
+// console.log("a --->", a);
+// console.log("b --->", b);
+
+///////////////////////////////////
+//6.
+// let a = [1, 2, [3, 4]];
+// let b = [...a];
+// b[0] = null;
+
+// console.log("a --->", a);
+// console.log("b --->", b);
+
+//////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+
+//**********Arguments are passed by value, unless their
+// value is an object, then they're passed by reference.*********** */
+
+function getInfo(member, year) {
+  member.name = "Lydia";
+  year = "1998";
+}
+
+const person = { name: "Sarah" };
+const birthYear = "1997";
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear);

@@ -38,22 +38,38 @@
 // person2.sayHello(); // Output: ?
 
 //Example 2
-function Vehicle(type) {
-  this.type = type;
-}
+// function Vehicle(type) {
+//   this.type = type;
+// }
 
-Vehicle.prototype.drive = function () {
-  console.log(`Driving a ${this.type}`);
-};
+// Vehicle.prototype.drive = function () {
+//   console.log("here 1 --->", `Driving a ${this.type}`);
+// };
 
-const car = new Vehicle("Car");
-car.drive(); // Output: Driving a Car
+// const car = new Vehicle("Car");
+// // car.drive(); // Output: ?
 
-Vehicle.prototype = {
-  startEngine() {
-    console.log("Engine started");
-  },
-};
+// Vehicle.prototype = {
+//   startEngine() {
+//     console.log("here 2 --->", "Engine started");
+//   },
+// };
 
-car.drive(); // Output: ?
-car.startEngine(); // Output: ?
+// car.drive(); // Output: ?
+// car.startEngine(); // Output: ?
+
+///////////////////////////////////////////////////////////
+//Example 3.
+
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+// }
+
+// const lydia = new Person("Lydia", "Hallie");
+// const sarah = Person("Sarah", "Smith");
+
+// console.log(lydia);
+// console.log(sarah);
+
+////////////////////////////////////////////////////////////
