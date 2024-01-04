@@ -31,6 +31,10 @@ let nums = [1, 2, 3, 4];
 //TC: O(N*2) and SP: O(N) as we are making a new array of same length.
 
 //Solution 2:
+//Product of all the elements to the left, store in result array.
+//Product of all the elements to the right, store in the result array
+// by multiplying them with elements already present array.
+//return the result array
 
 // let nums = [1, 2, 3, 4, 5];
 

@@ -38,7 +38,7 @@ let arr1 = [
   [15, 18],
 ];
 
-[1, 3, 2, 6, 8, 10, 15, 18];
+// [1, 3, 2, 6, 8, 10, 15, 18];
 
 let arr2 = [
   [1, 4],
@@ -54,22 +54,20 @@ function sortArr(arr) {
   return sortedArr;
 }
 
-function mergeIntervals(array) {
-  let arr = sortArr(array);
+function mergeIntervals(intervals) {
+  intervals.sort((a, b) => a[0] - b[0]);
 
-  let result = [];
+  let result = [intervals[0]];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (
-      result.length > 0 &&
-      arr[i][0] >= result[result.length - 1][0] &&
-      arr[i][0] <= result[result.length - 1][1]
-    ) {
-      const temp = result[result.length - 1];
-      result.pop();
-      result.push([temp[0], arr[i][1]]);
+  for (let i = 1; i < intervals.length; i++) {
+    const previousInterval = result[result.length - 1];
+    const currentInterval = intervals[i];
+
+    if (currentInterval[0] <= previousInterval[1]) {
+      //this will be a shallow copy here, so changing this will change the main array itself, as they are referring to same memory location.
+      previousInterval[1] = Math.max(currentInterval[1], previousInterval[1]);
     } else {
-      result.push(arr[i]);
+      result.push(currentInterval);
     }
   }
 

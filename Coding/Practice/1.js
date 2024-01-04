@@ -179,12 +179,12 @@
 // console.log("a --->", a);
 ////////////////////////////////
 //2.
-let a = [1, 2, 3, 4];
-let b = a;
-a = null;
+// let a = [1, 2, 3, 4];
+// let b = a;
+// a = null;
 
-console.log("a --->", a);
-console.log("b --->", b);
+// console.log("a --->", a);
+// console.log("b --->", b);
 /////////////////////////////////
 //3.
 // let a = [1, 2, [3, 4]];
@@ -226,14 +226,108 @@ console.log("b --->", b);
 //**********Arguments are passed by value, unless their
 // value is an object, then they're passed by reference.*********** */
 
-function getInfo(member, year) {
-  member.name = "Lydia";
-  year = "1998";
-}
+// function getInfo(member, year) {
+//   member.name = "Lydia";
+//   year = "1998";
+// }
 
-const person = { name: "Sarah" };
-const birthYear = "1997";
+// const person = { name: "Sarah" };
+// const birthYear = "1997";
 
-getInfo(person, birthYear);
+// getInfo(person, birthYear);
 
-console.log(person, birthYear);
+// console.log(person, birthYear);
+
+////////////////////
+
+////// NOTE: //**********push() and pop() method returns length of an.*********** */
+
+// let res = [1, 2, 3, 4];
+
+// console.log(res.pop());
+// console.log(res);
+
+///// NOTE: //********With a for-in loop, we can iterate over enumerable properties.*********** */////////////////
+
+// const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"];
+
+// for (let item in myLifeSummedUp) {
+//   console.log(item);
+// }
+
+///// NOTE: //********With a for-of loop, we can iterate over iterables. An array is an iterable..*********** */////////////////
+
+// for (let item of myLifeSummedUp) {
+//   console.log(item);
+// }
+
+///////NOTE: The value of the this keyword is dependent on where you use it. In a
+// "method", like the getStatus method, the "this keyword refers
+// to the object that the method belongs to".
+// Inside object ---> function is refered to as "method".
+//So, "this" refers to the "object".
+
+// var status = "😎";
+
+// setTimeout(() => {
+//   const status = "😍";
+
+//   const data = {
+//     status: "🥑",
+//     getStatus() {
+//       return this.status;
+//     },
+//   };
+
+//   console.log(data.getStatus());
+//   console.log(data.getStatus.call(this));
+// }, 0);
+
+//NOTE:
+// The value of the this keyword is dependent on where you
+// use it.In a method, like the getStatus method, the this
+// keyword refers to the object that the method belongs to.
+
+// function getName(name) {
+//   const hasName = !!name;
+//   console.log("hasName value --->", hasName);
+// }
+// console.log(getName());
+
+///////////////////////////////////////////////////////////////
+
+// const person = {
+//   name: "John",
+//   sayHello: function () {
+//     console.log("Hello, " + this.name);
+//   },
+// };
+
+// person.sayHello();
+
+//////////////////////////////////////////////////////////////
+
+// const person = {
+//   name: "John",
+//   sayHello: () => console.log("Hello, " + this.name),
+// };
+
+// person.sayHello();
+
+//Shallow copy
+/////////////*****Important: From merge interval question *********/////////////////////////
+
+// const arr = [1, 2, [3, 4]];
+//Ex. 1. This will change the array. As this is shallow copy.
+//Pointing to same reference after first level.
+// let el = arr[2];
+// el[0] = 100;
+// console.log("arr --->", arr);
+
+//Ex.2 This will "not" change the array. As this is deep copy.
+//Pointing to different reference (memory location) even after first level.
+// let el = [...arr[2]];
+// el[0] = 100;
+// console.log("arr --->", arr);
+
+///////////////////////////////////////
