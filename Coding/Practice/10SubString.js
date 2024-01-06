@@ -1,6 +1,7 @@
 var str = "abc";
 var temp = [];
 function subString(str, k) {
+  // ye "k" ki bhasad dekh lena bhai
   for (let i = k; i < str.length; i++) {
     temp.push(str[i]);
 

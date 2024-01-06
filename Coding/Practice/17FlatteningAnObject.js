@@ -55,20 +55,20 @@ function flattenAnObject(object, parent) {
   return finalObj;
 }
 
-console.log(flattenAnObject(obj, ""));
+console.log(flattenAnObject(target, ""));
 
-const arr = [4, 2, 5, [45, 32, 9, [98, 342, 893], 90, 43], 4, 75, [54, 256]];
+// const arr = [4, 2, 5, [45, 32, 9, [98, 342, 893], 90, 43], 4, 75, [54, 256]];
 
-function flateningArray(array) {
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (!Array.isArray(array[i])) {
-      result.push(array[i]);
-    } else {
-      result.push(...flateningArray(array[i]));
-    }
-  }
-  return result;
-}
+// function flateningArray(array) {
+//   let result = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (!Array.isArray(array[i])) {
+//       result.push(array[i]);
+//     } else {
+//       result.push(...flateningArray(array[i]));
+//     }
+//   }
+//   return result;
+// }
 
-console.log(flateningArray(arr));
+// console.log(flateningArray(arr));

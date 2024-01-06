@@ -64,10 +64,11 @@ var findDisappearedNumbers = function (nums) {
   for (let i = 0; i < nums.length; i++) {
     const index = Math.abs(nums[i]) - 1;
     if (nums[index] > 0) {
+      console.log("nums[index] becomes greater than zero");
       nums[index] = -nums[index];
     }
   }
-  //   console.log("nums --->", nums);
+  console.log("nums --->", nums);
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] > 0) {
       result.push(i + 1);
@@ -78,3 +79,12 @@ var findDisappearedNumbers = function (nums) {
 };
 
 console.log(findDisappearedNumbers(nums));
+
+//Jo number mil gaya, uska corresponding counting index ("-1" karke to get rid of tje length issue) negative kar denge.
+//abs(nums[i]) is used, jis se negative index na mile. Means koi index
+//ki corresponding value pehele hi mil gai hai, toh vo pehele se -ve hai, toh "-1" karne se issue (addition with -ve result) na aaye.
+// Phir se duplicate number mila toh, negative number hi over write hoga uske corresponding (same) count se.
+
+//So, because of this, values on the correct (corresponding)
+//index becomes negative. And remaining positive index positions will
+//be out numbers
