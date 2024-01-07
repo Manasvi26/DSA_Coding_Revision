@@ -331,3 +331,51 @@
 // console.log("arr --->", arr);
 
 ///////////////////////////////////////
+
+function sum(a) {
+  return function (b) {
+    if (b) {
+      return sum(a + b);
+    } else {
+      return a;
+    }
+  };
+}
+// console.log(sum(3)(2)(1)());
+
+let arr = [1, 2, 3, [4, 5, [6, 7]]];
+
+// console.log(arr.flat(4));
+
+// let result = [];
+// function flatten(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     const element = arr[i];
+//     if (Array.isArray(element)) {
+//       flatten(element);
+//     } else {
+//       result.push(element);
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(flatten(arr));
+
+//******"DEEP COPY" not flattening*********//
+// console.log(JSON.parse(JSON.stringify(arr))); //this is for deep copy
+
+//closure
+
+function tempClose(val) {
+  let a = 2; //var a = 2, or a=10, all will give same result
+  return function () {
+    return a * val;
+  };
+}
+
+const dummy1 = tempClose(4);
+const dummy2 = tempClose(10);
+
+console.log(dummy1());
+console.log(dummy2());

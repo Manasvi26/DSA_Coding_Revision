@@ -1,67 +1,60 @@
-// // // // let x = 'fog'
-// // // // function first() {
-// // // //  console.log(x)
-// // // // }
-// // // // x = 'pog'
-// // // //  function second() {
-// // // //    let x = 'rog'
-// // // //   first()
-// // // // }
-// // // // second()
-// // // // //rog
+// let x = "fog";
+// function first() {
+//   console.log(x);
+// }
+// x = "pog";
+// function second() {
+//   let x = "rog";
+//   first();
+// }
+// second();
 
-// // // // console.log('start');
+////////////////////////////////////////////////////
+// console.log("start");
 
-// // // // const promise1 = Promise.resolve().then(() => {
-// // // //   console.log('promise1');
-// // // //   const timer2 = setTimeout(() => {
-// // // //     console.log('timer2')
-// // // //   }, 0)
-// // // // });
+// const promise1 = Promise.resolve().then(() => {
+//   console.log("promise1");
+//   const timer2 = setTimeout(() => {
+//     console.log("timer2");
+//   }, 0);
+// });
 
-// // // // const timer1 = setTimeout(() => {
-// // // //   console.log('timer1')
-// // // //   const promise2 = Promise.resolve().then(() => {
-// // // //     console.log('promise2')
-// // // //   })
-// // // // }, 0)
+// const timer1 = setTimeout(() => {
+//   console.log("timer1");
+//   const promise2 = Promise.resolve().then(() => {
+//     console.log("promise2");
+//   });
+// }, 0);
 
-// // // // console.log('end');;
+// console.log("end");
 
-// // // // setTimeout( () => console.log('1') )
+///////////////////////////////////////////////////////////////
 
-// // // // Promise.resolve().then( () => console.log('promise2'))
-// // // // Promise.resolve().then( () => setTimeout( () => console.log('3') ) )
+// setTimeout(() => console.log("1"));
 
-// // // // new Promise( () => console.log('4') )
-// // // // setTimeout( () => console.log('5') )
+// Promise.resolve().then(() => console.log("promise2"));
+// Promise.resolve().then(() => setTimeout(() => console.log("3")));
 
-// // // // //1
-// // // // //5
-// // // // //promise2
-// // // // //3
-// // // // //undefined //error
+// new Promise(() => console.log("4"));
+// setTimeout(() => console.log("5"));
 
-// // // const promise = new Promise((resolve, reject) => {
-// // //   console.log(1);
-// // //   setTimeout(() => {
-// // //     console.log("timerStart");
-// // //     resolve("success");
-// // //     console.log("timerEnd");
-// // //   }, 0);
-// // //   console.log(2);
-// // // });
-// // // promise.then((res) => {
-// // //   console.log(res);
-// // // });
-// // // console.log(4);;
+////////////////////////////////////////////////////////////////////
 
-// // // //1
-// // // //4
-// // // //2
-// // // //timerStart
-// // // //timerEnd
-// // // //success
+// const promise = new Promise((resolve, reject) => {
+//   console.log(1);
+//   setTimeout(() => {
+//     console.log("timerStart");
+//     resolve("success");
+//     console.log("timerEnd");
+//   }, 0);
+//   console.log(2);
+// });
+// promise.then((res) => {
+//   console.log(res);
+// });
+// console.log(4);
+
+////////////////////////////////////////////////////////////////////
 
 // // // Write a function flatObject which takes an object as an input and  returns the flattened object as shown below:
 
@@ -102,41 +95,28 @@
 
 //  // Write the output
 
-// const func1 =  () => {
-//    try {
-//      let a = func2();
-//      console.log("func1", a);
-//      return a;
-//    } catch (e) {
-//      console.log("func1 err", e);
+// const func1 = () => {
+//   try {
+//     let a = func2();
+//     console.log("func1", a);
+//     return a;
+//   } catch (e) {
+//     console.log("func1 err", e);
 //   }
-//  };
+// };
 
-//  const func2 = () => {
-//    return new Promise((res, rej) => setTimeout(() => rej("rejected"), 1000))
-//  };
+// const func2 = () => {
+//   return new Promise((res, rej) => setTimeout(() => rej("rejected"), 2000));
+// };
 
-//  const func3 = async () => {
-//    try {
-//      let b = await func1();
-//      console.log("func3", b); //func3
-//      return b;
-//    } catch (e) {
-//      console.log("func3 err", e);
-//    }
-//  };
-//  // func3()
-
-// // Case 1
-// // func3 function itself
-// //func1 function itself
-
-// //func1
-// //func1 err undefimed
-
-// // Case 2
-// //function1 rejected
-// //func1 err
-
-// // Case 3
-// //func1 a
+// const func3 = async () => {
+//   try {
+//     let b = await func1(); //*****************stopped here
+//     console.log("func3", b);
+//     return b;
+//   } catch (e) {
+//     console.log("here");
+//     console.log("func3 err", e);
+//   }
+// };
+// func3();

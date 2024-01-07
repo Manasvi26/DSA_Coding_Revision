@@ -8,7 +8,7 @@ function dummyFunc() {
   return "Hello" + " " + this.name;
 }
 
-console.log(dummyFunc()); //o/p: Hello undefined
+// console.log(dummyFunc()); //o/p: Hello undefined
 ////////////////////////////////////////////////////////////////
 //How can be "call" the dymmyFunc so that it uses the
 //properties of "obj".
@@ -16,7 +16,7 @@ console.log(dummyFunc()); //o/p: Hello undefined
 
 //"call" method
 
-console.log(dummyFunc.call(obj)); //Output: Hello Manasvi
+// console.log(dummyFunc.call(obj)); //Output: Hello Manasvi
 
 //also, second parameter will be the list of arguments
 //so,
@@ -38,7 +38,9 @@ function sayHello(age, country) {
   );
 }
 
-console.log(sayHello.call(obj, 28, "India"));
+// const bindsayHello = sayHello.call(obj, 28, "India")
+// console.log(bindsayHello());//this will give type error
+// console.log(sayHello.call(obj, 28, "India"));
 
 ////////////////////////////////////////////////////////////////
 
@@ -46,29 +48,29 @@ console.log(sayHello.call(obj, 28, "India"));
 //Apply works same as "call", only difference is it takes all the arguments
 // in the form of "array". i.e. list of arguments.
 
-console.log(sayHello.apply(obj, [28, "India"]));
+// console.log(sayHello.apply(obj, [28, "India"]));
 
 ///////////////////////////////////////////////////////////////////
 
 //What is "bind" ?
-//now comes "bind". This as name suggests bind the "function" with the
+//now comes "bind". As name suggests, "binds" the "function" with the
 //particular "object" and returns a "resuable" function.
 // The bind method creates a "new function" that, when called,
 // "has its this keyword" set to the provided value, with a
 // given sequence of arguments.
 
 //Ex.
-const bindFunc = sayHello.bind(obj); //now this will be a new function
+// const bindFunc = sayHello.bind(obj); //now this will be a new function
 
 //so, now we can pass whatever arguments we want to pass inside
 //the new function we created using "bind".
 //Ex.
-console.log(bindFunc(30, "USA"));
-console.log(bindFunc(26, "England"));
+// console.log(bindFunc(30, "USA"));
+// console.log(bindFunc(26, "England"));
 
 //we can also do:
-const anotherBind = sayHello.bind(obj, 30, "Dubai");
-console.log(anotherBind());
+// const anotherBind = sayHello.bind(obj, 30, "Dubai");
+// console.log(anotherBind());
 
 /////////////////////////////////////////////////////////////
 
@@ -91,3 +93,5 @@ console.log(anotherBind());
 
 // sayHello.call(null); // Output: Hello, undefined!
 // sayHello.apply(undefined); // Output: Hello, undefined!
+
+//
