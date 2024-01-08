@@ -20,7 +20,7 @@
 // let s = ""
 // Output: 0
 
-// let s = "()[]{}";
+// let s = "()()()";
 // Output: 6
 // Example 3:
 
@@ -99,6 +99,7 @@ function longestValidParentheses(s) {
   let stack = [-1];
 
   for (let i = 0; i < s.length; i++) {
+    console.log("stack -->", stack);
     if (s[i] === "(") {
       stack.push(i);
     } else {
@@ -115,3 +116,7 @@ function longestValidParentheses(s) {
 }
 
 console.log("maxSize --->", longestValidParentheses(inputString));
+
+//Notes:
+//Only single type of bracket will be there. Here small bracket i.e. "(" or ")".
+//

@@ -6,10 +6,11 @@ const deepArr = JSON.parse(JSON.stringify(arr)); //partially deep //nested array
 // 2. Regex or Date types will not
 //be kept intact.
 //3. If "undefined" is a value assigned to any key, it will be ignored (not stored).
-
-deepArr[3][0] = 100;
-// console.log("arr --->", arr);
-// console.log("deepArr --->", deepArr);
+const newDeepArr = [...arr];
+newDeepArr[3][0] = 100;
+console.log("arr --->", arr);
+console.log("deepArr --->", deepArr);
+console.log("newDeep", newDeepArr);
 
 const obj = {
   name: "Manasvi",

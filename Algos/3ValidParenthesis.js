@@ -48,3 +48,9 @@ function checkValidity(string) {
   } else return true;
 }
 console.log(checkValidity(s));
+
+
+//NOTES:
+//1. Use stack.
+//2. Know when to push when to pop.
+//3. In the end stack should be empty for valid.
