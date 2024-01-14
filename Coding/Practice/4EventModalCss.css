@@ -1,0 +1,17 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  border: 20px solid red;
+  background-color: green;
+}
+
+.modal {
+  display: none;
+  height: 300px;
+  width: 300px;
+  padding: 30px;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  background-color: white;
+}
