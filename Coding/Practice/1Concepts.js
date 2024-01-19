@@ -104,8 +104,11 @@
 //   lastName: "doe",
 // };
 
+//1.
 // var obj2 = obj1;
+//2.
 // var obj2 = { ...obj1 };
+
 // obj2["firstName"] = "tony";
 // console.log(obj1.firstName);
 // How to avoid changing value of obj1 in above example
@@ -131,7 +134,8 @@
 
 // arrCopy[0].a = 10;
 // arrCopy[1] = 1000;
-// console.log(arr);
+// console.log("arrCopy --->", arrCopy);
+// console.log("arr --->", arr);
 
 //////////////////////////////////////////////////////////////////////
 
@@ -175,9 +179,11 @@
 // let a = [1, 2, 3, 4];
 // let b = a;
 // b = null;
+
 // console.log("b --->", b);
 // console.log("a --->", a);
 ////////////////////////////////
+
 //2.
 // let a = [1, 2, 3, 4];
 // let b = a;
@@ -186,6 +192,7 @@
 // console.log("a --->", a);
 // console.log("b --->", b);
 /////////////////////////////////
+
 //3.
 // let a = [1, 2, [3, 4]];
 // let b = a;
@@ -194,6 +201,7 @@
 // console.log("a --->", a);
 // console.log("b --->", b);
 ///////////////////////////////////
+
 //4.
 // let a = [1, 2, [3, 4]];
 // let b = a;
@@ -202,6 +210,7 @@
 // console.log("a --->", a);
 // console.log("b --->", b);
 ///////////////////////////////////////
+
 //5.
 // let a = [1, 2, [3, 4]];
 // let b = [...a];
@@ -267,13 +276,13 @@
 // Inside object ---> function is refered to as "method".
 //So, "this" refers to the "object".
 
-// var status = "😎";
+// var status = "Offline";
 
 // setTimeout(() => {
-//   const status = "😍";
+//   const status = "Online";
 
 //   const data = {
-//     status: "🥑",
+//     status: "Active",
 //     getStatus() {
 //       return this.status;
 //     },
@@ -332,18 +341,18 @@
 
 ///////////////////////////////////////
 
-function sum(a) {
-  return function (b) {
-    if (b) {
-      return sum(a + b);
-    } else {
-      return a;
-    }
-  };
-}
+// function sum(a) {
+//   return function (b) {
+//     if (b) {
+//       return sum(a + b);
+//     } else {
+//       return a;
+//     }
+//   };
+// }
 // console.log(sum(3)(2)(1)());
 
-let arr = [1, 2, 3, [4, 5, [6, 7]]];
+// let arr = [1, 2, 3, [4, 5, [6, 7]]];
 
 // console.log(arr.flat(4));
 
@@ -367,15 +376,133 @@ let arr = [1, 2, 3, [4, 5, [6, 7]]];
 
 //closure
 
-function tempClose(val) {
-  let a = 2; //var a = 2, or a=10, all will give same result
-  return function () {
-    return a * val;
-  };
-}
+// function tempClose(val) {
+//   let a = 2; //var a = 2, or a=10, all will give same result
+//   return function () {
+//     return a * val;
+//   };
+// }
 
-const dummy1 = tempClose(4);
-const dummy2 = tempClose(10);
+// const dummy1 = tempClose(4);
+// const dummy2 = tempClose(10);
 
-console.log(dummy1());
-console.log(dummy2());
+// console.log(dummy1());
+// console.log(dummy2());
+
+/////////////////////////////////////////////////////////////////////
+//1.
+// let a = { name: "Manasvi" };
+// let b = { name: "Manasvi" };
+// console.log("check --->", a === b);
+
+//2.
+// let a = { name: "Manasvi" };
+// let b = a;
+// b.name = "Sharma";
+// console.log("check --->", a === b);
+// console.log("b --->", b);
+// console.log("a --->", a);
+
+//3.
+// let a = { name: "Manasvi" };
+// let b = { ...a };
+// b.name = "Sharma";
+// console.log("check --->", a === b);
+// console.log("b --->", b);
+// console.log("a --->", a);
+
+//NOTE: Primitives are compared by "value", and non-primitives
+//are compared by there refernce.
+
+///////////////////////////////////////////////////////////////////////
+//1. With "await".
+
+// (async function func(params) {
+//   console.log("hello 2");
+
+//   Promise.resolve("hello 3").then((res) => console.log(res));
+
+//   const tempFunc = await new Promise((res, rej) => {
+//     console.log("hello 4");
+//     res("hello 5");
+//   }).then((res) => console.log(res));
+
+//   console.log("here --->", tempFunc);
+
+//   setTimeout(() => {
+//     console.log("hello 6");
+//   }, 0);
+
+//   console.log("hello 7");
+
+//   return "Manasvi";
+// })()
+//   .then((res) => console.log("res --->", res))
+//   .catch((err) => console.log("err --->", err));
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+//Ex.2
+
+// hello 2
+// hello 4
+// Promise { <pending> }
+// hello 7
+// hello 3
+// what ? ---> hello 5
+// res ---> Manasvi
+// hello 6
+
+// (async function func(params) {
+//   console.log("hello 2");
+
+//   Promise.resolve("hello 3").then((res) => console.log(res));
+
+//   const tempFunc = new Promise((res, rej) => {
+//     console.log("hello 4");
+//     res("hello 5");
+//   }).then((res) => console.log("what ? --->", res));
+
+//   console.log(tempFunc);
+
+//   setTimeout(() => {
+//     console.log("hello 6");
+//   }, 0);
+
+//   console.log("hello 7");
+
+//   return "Manasvi";
+// })()
+//   .then((res) => console.log("res --->", res))
+//   .catch((err) => console.log("err --->", err));
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+//3. Without "await"
+
+// (async function func(params) {
+//   console.log("hello 2");
+
+//   Promise.resolve("hello 3").then((res) => console.log(res)); //P1
+
+//   new Promise((res, rej) => {
+//     console.log("hello 4");
+//     res("hello 5");
+//   }).then((res) => console.log(res)); //P2
+
+//   setTimeout(() => {
+//     console.log("hello 6");
+//   }, 0);
+
+//   console.log("hello 7");
+
+//   return "Manasvi";
+// })()
+//   .then((res) => console.log("res --->", res))
+//   .catch((err) => console.log("err --->", err));
+
+//Important NOTE: .then() is absolutely necessary to recieve the priomise. Otherwise it will remain pending.
+//Important NOTE: See how setTimeout, executes even after final .then().
+//Important NOTE: If our "main fuction" will not return anything, then in final .then() response will be, res ---> undefined.
+
+//////////////////////////////////////////////////////////////
