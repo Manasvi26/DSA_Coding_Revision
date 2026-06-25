@@ -10,17 +10,18 @@
 //   console.log("hey", name);
 // };
 
+/////////////////////////////////////////////////////////////////////
+
 // const sum = (x, y) => x + y;
 // function sum(x, y) {
-//   x + y;
+//   return x + y;
 // }
 
-// sum(1, 2);
-
+// const result = sum(1, 2);
+// console.log(result);
 /////////////////////////////
 
-// "use strict";
-
+// // "use strict"; //check with and without this line
 // function alpha() {
 //   var name = "masai";
 //   console.log(this.name);
@@ -64,7 +65,8 @@
 // }
 
 // [1] === [1];
-// console.log([1] === [1]);
+console.log([1] == [1]);
+console.log([1] === [1]);
 
 // const sum = (x, y) => {
 //   x = x && 5;
@@ -99,6 +101,6 @@
 // var arr = [1, 2, 3];
 // arr.map(a * 5);
 
-const a = 10;
-a = 10;
-console.log(a);
+// const a = 10;
+// a = 10;
+// console.log(a);
