@@ -1,29 +1,29 @@
-const arr = [4, 5, 2, [53, 39]];
-const deepArr = JSON.parse(JSON.stringify(arr)); //partially deep //nested arrays and objs will be
+// const arr = [4, 5, 2, [53, 39]];
+// const deepArr = JSON.parse(JSON.stringify(arr)); //partially deep //nested arrays and objs will be
 //copied properly too.
 //Limitations:
 // 1. Functions will not be copied.
 // 2. Regex or Date types will not
 //be kept intact.
 //3. If "undefined" is a value assigned to any key, it will be ignored (not stored).
-const newDeepArr = [...arr];
-newDeepArr[3][0] = 100;
-console.log("arr --->", arr);
-console.log("deepArr --->", deepArr);
-console.log("newDeep", newDeepArr);
+// const newDeepArr = [...arr];
+// newDeepArr[3][0] = 100;
+// console.log("arr --->", arr);
+// console.log("deepArr --->", deepArr);
+// console.log("newDeep", newDeepArr);
 
-const obj = {
-  name: "Manasvi",
-  age: 28,
-  limit: [1, 2, 3],
-  proffesion: {
-    position: "SDE",
-    department: "Technology",
-    work: function development() {
-      console.log("Amazing growth!");
-    },
-  },
-};
+// const obj = {
+//   name: "Manasvi",
+//   age: 28,
+//   limit: [1, 2, 3],
+//   proffesion: {
+//     position: "SDE",
+//     department: "Technology",
+//     work: function development() {
+//       console.log("Amazing growth!");
+//     },
+//   },
+// };
 
 // console.log(obj);
 // let newDeepObj = JSON.parse(JSON.stringify(obj));
@@ -54,11 +54,11 @@ const obj = {
 
 // let a = [1, 2, [3, 4, [9, 10], 20], 100];
 
-// CASE.1
+// // CASE.1
 // let b = a;
 
-// CASE.2
-// let b = [...a];
+// // CASE.2
+// // let b = [...a];
 
 // b[0] = "abc";
 
@@ -71,12 +71,19 @@ const obj = {
 
 //IMPORTANT TRICKY QUESTION
 
-// var arr = [{ a: 1 }, { b: 2 }];
+var arr = [{ a: 1 }, { b: 2 }, 3];
+
+// 1.
 // let arrCopy = [...arr];
 
-// arrCopy[0].a = 10;
-// arrCopy[1] = 1000;
+// 2.
+// let arrCopy = JSON.parse(JSON.stringify(arr));
+
+arrCopy[0].a = 10; //nested
+arrCopy[2] = 1000; //top level
+
 // console.log(arr);
+// console.log(arrCopy);
 
 /////////////////////////////////////////////////
 

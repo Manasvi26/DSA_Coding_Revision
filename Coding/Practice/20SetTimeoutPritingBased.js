@@ -32,4 +32,5 @@ function printNumbersSolWithClosure() {
     })(i);
   }
 }
+
 printNumbersSolWithClosure();

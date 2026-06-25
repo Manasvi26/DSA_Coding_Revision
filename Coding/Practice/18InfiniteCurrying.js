@@ -55,15 +55,38 @@ const calc = {
   },
 };
 
-const result = calc.add(10).multiply(5).substract(30).add(20);
+// const result = calc.add(10).multiply(5).substract(30).add(20);
 
 // console.log(result.total);
 
-function addNew(a) {
-  return function (b) {
-    if (b) return add(a + b);
-    return a;
-  };
-}
+// function addNew(a) {
+//   return function (b) {
+//     if (b) return addNew(a + b);
+//     return a;
+//   };
+// }
 
-console.log(addNew(2)(3)(4)(5)(10)());
+// console.log(addNew(2)(3)(4)(5)(10)());
+
+// function currySum(a) {
+//   return function (b) {
+//     if (b) {
+//       return currySum(a + b);
+//     } else {
+//       return a;
+//     }
+//   };
+// }
+
+// console.log(currySum(1)());
+// console.log(currySum(1)(2)(3)());
+
+// function dummyCurry(a) {
+//   return function (b) {
+//     return a + b;
+//   };
+// }
+
+// const sum1 = dummyCurry(10);
+// const sum2 = sum1(20);
+// console.log(sum2);

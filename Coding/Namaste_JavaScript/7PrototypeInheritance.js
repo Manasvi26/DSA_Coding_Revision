@@ -27,6 +27,11 @@
 //   this.name = name;
 // }
 
+// //or with default param
+// // function Person(name = "Manasvi") {
+// //   this.name = name;
+// // }
+
 // Person.prototype.sayHello = function () {
 //   console.log(`Hello, I'm ${this.name}`);
 // };
@@ -51,7 +56,7 @@
 
 // Vehicle.prototype = {
 //   startEngine() {
-//         console.log("here 2 --->", "Engine started");
+//     console.log("here 2 --->", "Engine started");
 //   },
 // };
 

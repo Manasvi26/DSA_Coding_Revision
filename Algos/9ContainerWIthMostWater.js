@@ -33,7 +33,7 @@
 
 //Solutin 2.
 //With two pointers approach.
-//Calculating and moving the lower value pointer inside.
+//Calculating and moving the "LOWER VALUE" pointer inside.
 //Doing till both the pointers cross.
 
 function maxWater(height) {

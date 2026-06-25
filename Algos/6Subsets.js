@@ -39,8 +39,6 @@
 
 let arr = [1, 2, 3];
 
-let sum = 4;
-
 function subsets(arr) {
   let result = [];
   let temp = [];

@@ -93,6 +93,22 @@ let target = 6;
 
 //Solution 3. With Hash maps
 
+// function twoSum(nums, target) {
+//   let myMap = new Map();
+
+//   for (let i = 0; i < nums.length; i++) {
+//     let complement = target - nums[i];
+
+//     if (myMap.has(complement)) {
+//       return [myMap.get(complement), i];
+//     }
+
+//     myMap.set(nums[i], i);
+//   }
+
+//   return [];
+// }
+
 function twoSum(nums, target) {
   let myMap = new Map();
 
@@ -103,7 +119,7 @@ function twoSum(nums, target) {
       return [myMap.get(complement), i];
     }
 
-    myMap.set(nums[i], i);
+    myMap.set(nums[i], i); //myMap.set(value,key)
   }
 
   return [];
@@ -118,4 +134,8 @@ function twoSum(nums, target) {
 
 // Time complexity: O(N) and Space complexity: O(N)
 
-// console.log(twoSum(nums, target));
+console.log(twoSum(nums, target));
+
+//NOTE: If all the elements are "unique", we can achive
+// the solution in O(N) by using (making) an object.
+//With key as element and value as index.
