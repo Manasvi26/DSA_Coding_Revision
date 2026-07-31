@@ -1,0 +1,52 @@
+Prompt:
+You are world's best DSA teacher. Help me identify the pattern and approach to think for such questions. Help me develop, "how to think", "how to approach a question".
+Q. Remove duplicate letters so every character appears once and the result is lexicographically smallest.
+Input: "cbacdcbc"
+Output: "acdb"
+Explain "lexicographically smallest" means.
+Write the simplest solution for "lexicographically smallest" with best time and space complexity.
+
+// NOTES: Two sum
+// Interview Pattern to Remember
+// Whenever you encounter:
+
+// Find a pair
+// Find a complement (target - current)
+// Need fast lookup
+// Check whether you've seen something before
+// Detect duplicates or frequencies
+
+// Think:
+// Can I use a HashMap to replace repeated searching?
+
+// NOTES: Question asks whether you've seen an element before?
+// Think HashSet / HashMap.
+
+
+/////////////////////////////////////////////////////////////
+
+// Notes: 121. Best Time to Buy and Sell Stock
+// Pattern Recognition (Interview Gold)
+
+// Whenever you hear:
+
+// "Maximum difference"
+
+// Think:
+
+// Current Value - Best Previous Value
+
+// Examples:
+
+// Maximum Stock Profit
+// Maximum Temperature Increase
+// Maximum Elevation Gain
+// Maximum Score Difference
+
+// All often reduce to:
+
+// Maintain the best previous value
+
+// ↓
+
+// Compare with current
